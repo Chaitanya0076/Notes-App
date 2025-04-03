@@ -155,6 +155,7 @@
   background: hsl(222.2 47.4% 11.2%);
 }
 
+/* for the AI response */
 .bot-response h1 {
   font-size: 1.8rem;
   font-weight: bold;

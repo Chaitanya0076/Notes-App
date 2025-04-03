@@ -26,9 +26,16 @@ function AuthForm({type}: {type: "login" | "signup"}) {
       let title;
       let description;
       if(isLoginForm){
-        errorMessage = (await loginAction(email,password)).errorMessage;
+        const result = await loginAction(email,password);
+        errorMessage = result.errorMessage;
         title = "Login successful";
         description = "You have successfully logged in";
+        
+        if(errorMessage && errorMessage.includes("not found")) {
+          toast.error("Account not found. Please sign up first.");
+          router.replace("/signup");
+          return;
+        }
       }else{
         errorMessage = (await signUpAction(email,password)).errorMessage;
         title = "SignUp successful, please verfiy the email to login";

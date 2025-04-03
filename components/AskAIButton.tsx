@@ -133,7 +133,7 @@ function AskAIButton({ user }: Props) {
            value={questionText}
            onChange={(e) => setQuestionText(e.target.value)}
            />
-           <Button className="ml-auto mt-2 h-8 w-8 rounded-full bg-primary text-primary-foreground hover:bg-primary-hover">
+           <Button className="ml-auto mt-2 h-8 w-8 rounded-full bg-primary text-primary-foreground hover:bg-primary-hover" onClick={handleSubmit}>
              <ArrowUpIcon className="h-4 w-4"/>
            </Button>
         </div>
